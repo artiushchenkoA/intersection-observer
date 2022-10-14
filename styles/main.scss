@@ -57,9 +57,29 @@
         font-size: 22px;
         color: #5c6370;
         text-decoration: none;
+        position: relative;
+        transition: 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 92% 0 0 0;
+            background: #000ee6;
+            transition: 0.3s;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+
+        &:hover::after {
+            inset: 0 0 0 0;
+        }
 
         &.active {
             color: #000ee6;
+            background: #fff;
         }
     }
 }
